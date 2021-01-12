@@ -1,6 +1,9 @@
 import markovify
 from random import randrange
 import tweepy
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 # Get raw text as string.
 with open("data.txt") as f:
@@ -18,8 +21,8 @@ rand = randrange(99)
 
 ln_title = results[rand]
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+auth = tweepy.OAuthHandler(os.getenv("CONSUMER_KEY"), os.getenv("CONSUMER_SECRET"))
+auth.set_access_token(os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET"))
 
 api = tweepy.API(auth)
 
