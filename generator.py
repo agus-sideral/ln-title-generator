@@ -12,15 +12,21 @@ with open("data.txt") as f:
 # Build the model.
 text_model = markovify.NewlineText(text)
 
-# Print three randomly-generated sentences of no more than 280 characters
+# Generate results
 results = []
 for i in range(100):
     results.append(text_model.make_short_sentence(120, 40))
 
-rand = randrange(99)
+# Remove duplicates and null results
 
+results = filter(lambda res: res != None, results)
+results = list(set(results))
+
+# Generate random number and select result
+rand = randrange(len(results))
 ln_title = results[rand]
 
+# Post tweet
 auth = tweepy.OAuthHandler(os.getenv("CONSUMER_KEY"), os.getenv("CONSUMER_SECRET"))
 auth.set_access_token(os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET"))
 
