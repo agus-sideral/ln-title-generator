@@ -26,7 +26,7 @@ results = list(set(results))
 
 # Generate random number and select result
 rand = randrange(len(results))
-ln_title = results[rand]
+ln_title = results[rand] + ' #LN_title_bot'
 
 # Post tweet
 auth = tweepy.OAuthHandler(os.getenv("CONSUMER_KEY"), os.getenv("CONSUMER_SECRET"))
