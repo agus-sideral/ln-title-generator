@@ -2,7 +2,7 @@ name: Run Python bot
 
 on:
   schedule:
-    - cron: '23 0/4 * * *'
+    - cron: '23 0/3 * * *'
 
 jobs:
   build:
