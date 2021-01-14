@@ -2,11 +2,10 @@ import tweepy
 from dotenv import load_dotenv
 load_dotenv()
 import os
+import twitter
 
 # Connect to Twitter
-auth = tweepy.OAuthHandler(os.getenv("CONSUMER_KEY"), os.getenv("CONSUMER_SECRET"))
-auth.set_access_token(os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET"))
-api = tweepy.API(auth)
+api = twitter.api()
 
 # Create Friendship uwu (Follow followers)
 # Find followers
