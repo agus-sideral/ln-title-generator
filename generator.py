@@ -28,3 +28,4 @@ ln_title = results[rand] + ' #LN_title_bot'
 # Post tweet
 api = twitter.api()
 api.update_status(ln_title)
+print("Just tweeted: " + ln_title + ".")
