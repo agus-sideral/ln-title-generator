@@ -1,6 +1,7 @@
-name: Run Python bot
+name: Run Python script
 
 on:
+  push:
   schedule:
     - cron: '0 1/3 * * *'
 
